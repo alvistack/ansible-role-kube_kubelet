@@ -30,7 +30,7 @@
 - hosts: all
   remote_user: root
   tasks:
-    - name: kubelet version
-      command: kubelet version --client
+    - name: kubelet --version
+      command: kubelet --version
       register: result
       changed_when: result is not succeeded
