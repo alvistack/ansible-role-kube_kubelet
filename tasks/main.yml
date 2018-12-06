@@ -46,7 +46,7 @@
 
 - name: download archive
   get_url:
-    url: "{{ kubelet_url }}"
+    url: "{{ kubelet_download_url }}"
     dest: "/usr/local/bin/kubelet"
     owner: "root"
     group: "root"
