@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Kubernetes version
+# Kubernetes version.
 kubernetes_version: "v1.12.3"
 
 # URL for download kubelet binary.
