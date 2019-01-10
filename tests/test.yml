@@ -25,6 +25,13 @@
 - hosts: all
   remote_user: root
   roles:
+    - role: apt
+    - role: yum
+    - role: docker
+    - role: cni-plugins
+    - role: cri-tools
+    - role: kubeadm
+    - role: kubectl
     - role: kubelet
 
 - hosts: all
@@ -34,3 +41,10 @@
       command: kubelet --version
       register: result
       changed_when: result is not succeeded
+
+    - name: start service
+      service:
+        name: kubelet
+        state: started
+      changed_when: false
+      ignore_errors: yes
