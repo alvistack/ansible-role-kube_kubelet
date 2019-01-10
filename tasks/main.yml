@@ -78,7 +78,8 @@
   with_items:
     - { dest: "/etc/systemd/system/kubelet.service" }
     - { dest: "/etc/systemd/system/kubelet.service.d/10-kubeadm.conf" }
-  register: template_result
+  notify:
+    - systemctl daemon-reload
   tags: kubelet
 
 - name: prepare files
@@ -92,17 +93,6 @@
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
     - { dest: "/etc/systemd/system/kubelet.service" }
     - { dest: "/etc/systemd/system/kubelet.service.d/10-kubeadm.conf" }
-  tags: kubelet
-
-- name: systemctl daemon-reload
-  systemd:
-    name: kubelet
-    daemon_reload: yes
-  when:
-    - ansible_service_mgr == 'systemd'
-    - template_result is changed
-  changed_when: false
-  ignore_errors: yes
   tags: kubelet
 
 - name: enable service
