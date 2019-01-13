@@ -55,6 +55,7 @@
     - { dest: "/etc/systemd/system" }
     - { dest: "/etc/systemd/system/kubelet.service.d" }
     - { dest: "/usr/local/bin" }
+    - { dest: "/var/local/lib/kubelet" }
   tags: kubelet
 
 - name: download archive
