@@ -44,6 +44,20 @@
     loop_var: "loop_var"
   tags: kubelet
 
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  with_items:
+    - { dest: "/etc/systemd/system" }
+    - { dest: "/etc/systemd/system/kubelet.service.d" }
+    - { dest: "/usr/local/bin" }
+    - { dest: "/var/lib/kubelet" }
+  tags: kubelet
+
 - name: download archive
   get_url:
     url: "{{ kubelet_download_url }}"
@@ -53,4 +67,37 @@
     mode: "0755"
   register: result
   until: result is succeeded
+  tags: kubelet
+
+- name: copy templates
+  template:
+    src: "./templates{{ item.dest }}.j2"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  with_items:
+    - { dest: "/etc/systemd/system/kubelet.service" }
+  notify:
+    - systemctl daemon-reload
+  tags: kubelet
+
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  with_items:
+    - { dest: "/etc/systemd/system/kubelet.service" }
+    - { dest: "/usr/local/bin/kubelet", mode: "0755" }
+  tags: kubelet
+
+- name: enable service
+  service:
+    name: kubelet
+    enabled: yes
+  changed_when: false
+  ignore_errors: yes
   tags: kubelet
