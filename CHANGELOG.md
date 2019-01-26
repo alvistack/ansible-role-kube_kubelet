@@ -1,8 +1,15 @@
 # Ansible Role for kubelet
 
-## 2.2.0 - TBC
+## 2.3.0 - TBC
 
 ### Major Changes
+
+## 2.2.0 - 2019-01-26
+
+### Major Changes
+
+  - Add systemd service support
+  - Use handler for `systemctl daemon-reload`
 
 ## 2.1.0 - 2018-12-06
 
