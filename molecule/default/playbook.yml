@@ -14,6 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: python
-  src: https://github.com/alvistack/ansible-role-python
-  version: develop
+- hosts: all
+  remote_user: root
+  roles:
+    - role: kubelet
+
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: kubelet --version
+      command: kubelet --version
+      register: result
+      changed_when: result is not succeeded
+
+    - name: start service
+      service:
+        name: kubelet
+        state: started
+      changed_when: false
+      ignore_errors: true
