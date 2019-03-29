@@ -21,4 +21,4 @@ kubernetes_version: "v1.14.0"
 kubelet_download:
   url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubernetes_version }}/bin/linux/amd64/kubelet"
   dest: "/usr/local/bin/kubelet"
-  checksum: "sha1:9dbc9a420e7efa9c4f572a16551f3f8dd7cef185"
+  checksum: "sha1:c3b736fd0f003765c12d99f2c995a8369e6241f4"
