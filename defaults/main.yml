@@ -14,11 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Kubernetes version.
-kubernetes_version: "v1.14.0"
-
 # URL for download kubelet binary.
+kubelet_version: "v1.14.0"
 kubelet_download:
-  url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubernetes_version }}/bin/linux/amd64/kubelet"
+  url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubelet_version }}/bin/linux/amd64/kubelet"
   dest: "/usr/local/bin/kubelet"
   checksum: "sha1:c3b736fd0f003765c12d99f2c995a8369e6241f4"
