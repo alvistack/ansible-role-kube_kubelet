@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _yum: [
-  { state: "latest", name: "conntrack" },
+  { state: "latest", name: "conntrack-tools" },
   { state: "latest", name: "ebtables" },
   { state: "latest", name: "ethtool" },
   { state: "latest", name: "iproute" },
