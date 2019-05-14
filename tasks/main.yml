@@ -80,6 +80,7 @@
     - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
     - systemctl daemon-reload
+    - systemctl restart
   tags: kubelet
 
 - name: prepare files
