@@ -79,8 +79,8 @@
   with_items:
     - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
-    - systemctl daemon-reload
-    - systemctl restart
+    - kubelet | systemctl daemon-reload
+    - kubelet | systemctl restart
   tags: kubelet
 
 - name: prepare files
