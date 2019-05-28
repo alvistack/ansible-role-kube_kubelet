@@ -16,12 +16,14 @@
 
 - hosts: all
   remote_user: root
+  become: true
   roles:
     - role: bootstrap
     - role: kubelet
 
 - hosts: all
   remote_user: root
+  become: true
   tasks:
     - name: kubelet --version
       command: kubelet --version
