@@ -13,3 +13,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+_kubelet_download:
+  v1.14.2:
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kubelet"
+    dest: "/usr/local/bin/kubelet"
+    checksum: "sha1:70ff8382507def3e11bb1d3c964827a2a5dfa533"
+  v1.14.1:
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubelet"
+    dest: "/usr/local/bin/kubelet"
+    checksum: "sha1:72548c528e43f76a104db4888764453958420496"
+  v1.13.6:
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.13.6/bin/linux/amd64/kubelet"
+    dest: "/usr/local/bin/kubelet"
+    checksum: "sha1:e684e8aa9b9939d3b141611b17436059694a0ec6"
