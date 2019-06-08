@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _kubelet_download:
+  v1.14.3:
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubelet"
+    dest: "/usr/local/bin/kubelet"
+    checksum: "sha1:a658cef83dc3a0894b60a398116828e57e682fee"
   v1.14.2:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kubelet"
     dest: "/usr/local/bin/kubelet"
