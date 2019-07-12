@@ -60,6 +60,7 @@
     - { dest: "/etc/systemd/system/kubelet.service.d" }
     - { dest: "/usr/local/bin" }
     - { dest: "/var/lib/kubelet" }
+    - { dest: "{{ kubelet_download.dest | dirname }}" }
   tags: kubelet
 
 - name: download archive
@@ -71,6 +72,18 @@
     - "{{ kubelet_download }}"
   register: result
   until: result is succeeded
+  tags: kubelet
+
+- name: copy archive
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    remote_src: true
+  loop:
+    - { src: "{{ kubelet_download.dest }}", dest: "/usr/local/bin/kubelet", mode: "0755" }
   tags: kubelet
 
 - name: copy templates

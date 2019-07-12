@@ -17,21 +17,21 @@
 _kubelet_download:
   v1.15.0:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubelet"
-    dest: "/usr/local/bin/kubelet"
+    dest: "/var/cache/ansible/kubelet-v1.15.0"
     checksum: "sha1:e7167ee0fbbb4915a0d784cd0d6a38f0dffd8814"
   v1.14.3:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubelet"
-    dest: "/usr/local/bin/kubelet"
+    dest: "/var/cache/ansible/kubelet-v1.14.3"
     checksum: "sha1:a658cef83dc3a0894b60a398116828e57e682fee"
   v1.14.2:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.2/bin/linux/amd64/kubelet"
-    dest: "/usr/local/bin/kubelet"
+    dest: "/var/cache/ansible/kubelet-v1.14.2"
     checksum: "sha1:70ff8382507def3e11bb1d3c964827a2a5dfa533"
   v1.14.1:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubelet"
-    dest: "/usr/local/bin/kubelet"
+    dest: "/var/cache/ansible/kubelet-v1.14.1"
     checksum: "sha1:72548c528e43f76a104db4888764453958420496"
   v1.13.6:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.13.6/bin/linux/amd64/kubelet"
-    dest: "/usr/local/bin/kubelet"
+    dest: "/var/cache/ansible/kubelet-v1.13.6"
     checksum: "sha1:e684e8aa9b9939d3b141611b17436059694a0ec6"
