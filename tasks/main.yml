@@ -70,8 +70,8 @@
     checksum: "{{ item.checksum }}"
   loop:
     - "{{ kubelet_download }}"
-  register: result
-  until: result is succeeded
+  register: get_url_result
+  until: get_url_result is succeeded
   tags: kubelet
 
 - name: copy archive
@@ -84,6 +84,9 @@
     remote_src: true
   loop:
     - { src: "{{ kubelet_download.dest }}", dest: "/usr/local/bin/kubelet", mode: "0755" }
+  when: get_url_result is changed
+  notify:
+    - kubelet | systemctl restart kubelet
   tags: kubelet
 
 - name: copy templates
@@ -97,7 +100,7 @@
     - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
-    - kubelet | systemctl restart
+    - kubelet | systemctl restart kubelet
   tags: kubelet
 
 - name: prepare files

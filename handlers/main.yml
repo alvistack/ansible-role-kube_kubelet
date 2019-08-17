@@ -22,11 +22,12 @@
   changed_when: false
   ignore_errors: true
 
-- name: kubelet | systemctl restart
+- name: kubelet | systemctl restart kubelet
   service:
-    name: "{{ item.name }}"
-    state: restarted
-  loop:
-    - { name: "kubelet" }
+    name: "kubelet"
+    state: "restarted"
+  loop: "{{ ansible_play_hosts }}"
+  delegate_to: "{{ item }}"
+  run_once: true
   changed_when: false
   ignore_errors: true
