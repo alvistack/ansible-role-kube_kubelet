@@ -83,7 +83,7 @@
     executable: "/bin/bash"
   when: get_url_result is changed
   notify:
-    - kubelet | systemctl restart kubelet
+    - kubelet | systemctl restart
   tags: kubelet
 
 - name: copy templates
@@ -97,7 +97,7 @@
     - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
-    - kubelet | systemctl restart kubelet
+    - kubelet | systemctl restart
   tags: kubelet
 
 - name: prepare files
@@ -118,10 +118,8 @@
 
 - name: enable service
   service:
-    name: "{{ item.name }}"
+    name: "kubelet"
     enabled: true
-  loop:
-    - { name: "kubelet" }
   changed_when: false
   ignore_errors: true
   tags: kubelet

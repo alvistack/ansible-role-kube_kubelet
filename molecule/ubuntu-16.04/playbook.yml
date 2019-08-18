@@ -32,7 +32,7 @@
 
     - name: start service
       service:
-        name: kubelet
-        state: started
+        name: "kubelet"
+        state: "started"
       changed_when: false
       ignore_errors: true

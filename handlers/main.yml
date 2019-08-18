@@ -17,12 +17,10 @@
 - name: kubelet | systemctl daemon-reload
   systemd:
     daemon_reload: true
-  when:
-    - ansible_service_mgr == 'systemd'
   changed_when: false
   ignore_errors: true
 
-- name: kubelet | systemctl restart kubelet
+- name: kubelet | systemctl restart
   service:
     name: "kubelet"
     state: "restarted"
