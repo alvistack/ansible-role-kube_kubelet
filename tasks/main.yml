@@ -74,16 +74,13 @@
   until: get_url_result is succeeded
   tags: kubelet
 
-- name: copy archive
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-    remote_src: true
-  loop:
-    - { src: "{{ kubelet_download.dest }}", dest: "/usr/local/bin/kubelet", mode: "0755" }
+- name: unarchive package
+  shell: |
+    set -o pipefail
+    cd /usr/local/bin
+    TMP_DIR="`mktemp -d`" && cp {{ kubelet_download.dest }} $TMP_DIR/kubelet && mv $TMP_DIR/kubelet . && rm -rf $TMP_DIR
+  args:
+    executable: "/bin/bash"
   when: get_url_result is changed
   notify:
     - kubelet | systemctl restart kubelet
