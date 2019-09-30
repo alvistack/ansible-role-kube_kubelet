@@ -56,6 +56,8 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
+    - { dest: "/etc/kubernetes" }
+    - { dest: "/etc/kubernetes/manifests" }
     - { dest: "/etc/systemd/system" }
     - { dest: "/etc/systemd/system/kubelet.service.d" }
     - { dest: "/usr/local/bin" }
