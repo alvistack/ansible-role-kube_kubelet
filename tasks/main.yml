@@ -56,6 +56,8 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
+    - { dest: "/etc/kubernetes" }
+    - { dest: "/etc/kubernetes/manifests" }
     - { dest: "/etc/systemd/system" }
     - { dest: "/etc/systemd/system/kubelet.service.d" }
     - { dest: "/usr/local/bin" }
@@ -112,14 +114,14 @@
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
   tags: kubelet
 
-- name: flush handlers
-  meta: flush_handlers
-  tags: kubelet
-
 - name: enable service
   service:
     name: "kubelet"
     enabled: true
   changed_when: false
   ignore_errors: true
+  tags: kubelet
+
+- name: flush handlers
+  meta: flush_handlers
   tags: kubelet
