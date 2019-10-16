@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _kubelet_download:
+  v1.16.2:
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubelet"
+    dest: "/var/cache/ansible/kubelet-v1.16.2"
+    checksum: "sha1:10bbc54e28305f54d58bd2ddf4d19f5bdb814d78"
   v1.16.1:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.16.1/bin/linux/amd64/kubelet"
     dest: "/var/cache/ansible/kubelet-v1.16.1"
