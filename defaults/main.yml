@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # kubelet version.
-kubelet_version: "v1.16.3"
+kubelet_version: "v1.17.0"
 
 # kubelet download details.
 kubelet_download: "{{ _kubelet_download[kubelet_version] }}"
