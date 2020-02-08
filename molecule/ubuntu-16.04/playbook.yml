@@ -19,6 +19,7 @@
   become: true
   roles:
     - role: bootstrap
+    - role: python
     - role: kubelet
 
 - hosts: all
