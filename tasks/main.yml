@@ -122,14 +122,6 @@
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
   tags: kubelet
 
-- name: enable service
-  service:
-    name: "kubelet"
-    enabled: true
-  changed_when: false
-  ignore_errors: true
-  tags: kubelet
-
 - name: flush handlers
   meta: flush_handlers
   tags: kubelet
@@ -138,6 +130,7 @@
   service:
     name: "kubelet"
     state: "started"
+    enabled: true
   changed_when: false
   ignore_errors: true
   tags: kubelet
