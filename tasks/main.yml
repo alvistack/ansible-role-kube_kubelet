@@ -83,7 +83,7 @@
   shell: |
     set -o pipefail
     cd /usr/local/bin
-    TMP_DIR="`mktemp -d`" \
+    TMP_DIR="$(mktemp -d)" \
       && cp {{ kubelet_download.dest }} $TMP_DIR/kubelet \
       && chown root:root $TMP_DIR/kubelet \
       && chmod 0755 $TMP_DIR/kubelet \
@@ -126,7 +126,7 @@
   meta: flush_handlers
   tags: kubelet
 
-- name: enable service
+- name: start service
   service:
     name: "kubelet"
     state: "started"
