@@ -20,7 +20,7 @@
   changed_when: false
   ignore_errors: true
 
-- name: kubelet | systemctl restart
+- name: kubelet | systemctl restart kubelet
   service:
     name: "kubelet"
     state: "restarted"

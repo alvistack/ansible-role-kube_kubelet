@@ -93,7 +93,7 @@
     executable: "/bin/bash"
   when: get_url_result is changed
   notify:
-    - kubelet | systemctl restart
+    - kubelet | systemctl restart kubelet
   tags: kubelet
 
 - name: copy templates
@@ -107,7 +107,7 @@
     - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
-    - kubelet | systemctl restart
+    - kubelet | systemctl restart kubelet
   tags: kubelet
 
 - name: prepare files
