@@ -126,7 +126,7 @@
   meta: flush_handlers
   tags: kubelet
 
-- name: start service
+- name: systemctl start kubelet
   service:
     name: "kubelet"
     state: "started"
