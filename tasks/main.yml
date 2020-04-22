@@ -93,7 +93,7 @@
     executable: "/bin/bash"
   when: get_url_result is changed
   notify:
-    - kubelet | systemctl restart
+    - kubelet | systemctl restart kubelet
   tags: kubelet
 
 - name: copy templates
@@ -107,7 +107,7 @@
     - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
-    - kubelet | systemctl restart
+    - kubelet | systemctl restart kubelet
   tags: kubelet
 
 - name: prepare files
@@ -122,15 +122,15 @@
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
   tags: kubelet
 
-- name: flush handlers
-  meta: flush_handlers
-  tags: kubelet
-
-- name: start service
+- name: systemctl start kubelet
   service:
     name: "kubelet"
     state: "started"
     enabled: true
   changed_when: false
   ignore_errors: true
+  tags: kubelet
+
+- name: flush handlers
+  meta: flush_handlers
   tags: kubelet
