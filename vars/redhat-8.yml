@@ -15,6 +15,7 @@
 # limitations under the License.
 
 _yum:
+  - { state: "latest", name: "chkconfig" }
   - { state: "latest", name: "conntrack-tools" }
   - { state: "latest", name: "ebtables" }
   - { state: "latest", name: "ethtool" }

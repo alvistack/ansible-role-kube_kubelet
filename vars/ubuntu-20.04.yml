@@ -17,6 +17,7 @@
 _apt:
   - { state: "latest", name: "arptables" }
   - { state: "latest", name: "conntrack" }
+  - { state: "latest", name: "dpkg" }
   - { state: "latest", name: "ebtables" }
   - { state: "latest", name: "ethtool" }
   - { state: "latest", name: "iproute2" }
