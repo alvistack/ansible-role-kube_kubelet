@@ -4,7 +4,6 @@
 
 ### Major Changes
 
-  - Ensure `iptables` in legacy mode for Debian 10
   - Support Debian 10
   - `molecule -s default` with delegated to localhost
 

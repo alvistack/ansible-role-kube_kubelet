@@ -22,16 +22,3 @@
   register: result
   until: result is succeeded
   tags: kubelet
-
-- name: update-alternative
-  alternatives:
-    name: "{{ item.name }}"
-    path: "{{ item.path }}"
-  loop:
-    - { name: "arptables", path: "/usr/sbin/arptables-legacy" }
-    - { name: "ebtables", path: "/usr/sbin/ebtables-legacy" }
-    - { name: "ip6tables", path: "/usr/sbin/ip6tables-legacy" }
-    - { name: "iptables", path: "/usr/sbin/iptables-legacy" }
-  changed_when: false
-  ignore_errors: true
-  tags: kubelet
