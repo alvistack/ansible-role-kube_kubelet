@@ -15,6 +15,7 @@
 # limitations under the License.
 
 _apt:
+  - { state: "latest", name: "arptables" }
   - { state: "latest", name: "conntrack" }
   - { state: "latest", name: "ebtables" }
   - { state: "latest", name: "ethtool" }
