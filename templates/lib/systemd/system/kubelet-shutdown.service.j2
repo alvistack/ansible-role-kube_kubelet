@@ -6,7 +6,7 @@ Wants=kubelet.service docker.service containerd.service crio.service
 After=kubelet.service docker.service containerd.service crio.service
 
 [Service]
-Type=onshot
+Type=oneshot
 RemainAfterExit=yes
 ExecStop=/usr/local/bin/crictl rm -af
 
