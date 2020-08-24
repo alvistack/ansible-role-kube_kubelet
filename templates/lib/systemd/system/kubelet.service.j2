@@ -2,6 +2,8 @@
 
 [Unit]
 Description=kubelet: The Kubernetes Node Agent
+Wants=etcd.service docker.service containerd.service crio.service
+After=etcd.service docker.service containerd.service crio.service
 Documentation=http://kubernetes.io/docs/
 
 [Service]

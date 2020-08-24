@@ -2,8 +2,8 @@
 
 [Unit]
 Description=Shutdown Kubernetes containers before shutting down the system
-Wants=kubelet.service docker.service containerd.service crio.service
-After=kubelet.service docker.service containerd.service crio.service
+Wants=kubelet.service
+After=kubelet.service
 
 [Service]
 Type=oneshot
