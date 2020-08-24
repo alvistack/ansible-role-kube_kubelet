@@ -105,6 +105,7 @@
     group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
   loop:
+    - { dest: "/lib/systemd/system/kubelet-shutdown.service" }
     - { dest: "/lib/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
@@ -120,6 +121,7 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "/etc/systemd/system/kubelet.service", state: "absent" }
+    - { dest: "/lib/systemd/system/kubelet-shutdown.service" }
     - { dest: "/lib/systemd/system/kubelet.service" }
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
   tags: kubelet
@@ -127,6 +129,15 @@
 - name: systemctl start kubelet
   service:
     name: "kubelet"
+    state: "started"
+    enabled: true
+  changed_when: false
+  ignore_errors: true
+  tags: kubelet
+
+- name: systemctl start kubelet-shutdown
+  service:
+    name: "kubelet-shutdown"
     state: "started"
     enabled: true
   changed_when: false

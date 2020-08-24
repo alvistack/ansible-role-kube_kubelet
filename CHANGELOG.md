@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Shutdown Kubernetes containers before shutting down the system
   - Upgrade Travis CI test as Ubuntu Focal based
   - Upgrade minimal Ansible support to 2.10.0
   - Support openSUSE Leap 15.2

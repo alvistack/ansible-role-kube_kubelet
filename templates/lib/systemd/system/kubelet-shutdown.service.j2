@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=Shutdown Kubernetes containers before shutting down the system
+Wants=kubelet.service docker.service containerd.service crio.service
+After=kubelet.service docker.service containerd.service crio.service
+
+[Service]
+Type=onshot
+RemainAfterExit=yes
+ExecStop=/usr/local/bin/crictl rm -af
+
+[Install]
+WantedBy=multi-user.target
