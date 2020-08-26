@@ -1,9 +1,14 @@
 # Ansible Role for kubelet
 
-## 4.5.0 - TBC
+## 4.6.0 - TBC
 
 ### Major Changes
 
+## 4.5.0 - 2020-08-26
+
+### Major Changes
+
+  - Shutdown Kubernetes containers before shutting down the system
   - Upgrade Travis CI test as Ubuntu Focal based
   - Upgrade minimal Ansible support to 2.10.0
   - Support openSUSE Leap 15.2

@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=Shutdown Kubernetes containers before shutting down the system
+Documentation=https://kubernetes.io/docs/home/
+Wants=kubelet.service
+After=kubelet.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStop=/usr/local/bin/crictl rm -af
+
+[Install]
+WantedBy=multi-user.target
