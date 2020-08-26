@@ -3,8 +3,8 @@
 [Unit]
 Description=kubelet: The Kubernetes Node Agent
 Documentation=https://kubernetes.io/docs/home/
-Wants=network-online.target etcd.service docker.service containerd.service crio.service
-After=network-online.target etcd.service docker.service containerd.service crio.service
+Wants=network-online.target remote-fs.target
+After=network-online.target remote-fs.target
 
 [Service]
 ExecStart=/usr/local/bin/kubelet
