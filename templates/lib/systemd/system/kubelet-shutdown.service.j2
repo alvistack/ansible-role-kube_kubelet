@@ -4,6 +4,7 @@
 Description=Shutdown Kubernetes containers before shutting down the system
 Documentation=https://kubernetes.io/docs/home/
 After=kubelet.service
+Wants=kubelet.service
 
 [Service]
 Type=oneshot
@@ -11,4 +12,4 @@ RemainAfterExit=yes
 ExecStop=/usr/local/bin/crictl rm -af
 
 [Install]
-WantedBy=multi-user.target kubelet.service
+WantedBy=multi-user.target

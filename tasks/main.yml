@@ -135,6 +135,15 @@
   ignore_errors: true
   tags: kubelet
 
+- name: systemctl start kubelet-shutdown.service
+  service:
+    name: "kubelet-shutdown.service"
+    state: "started"
+    enabled: true
+  changed_when: false
+  ignore_errors: true
+  tags: kubelet
+
 - name: flush handlers
   meta: flush_handlers
   tags: kubelet
