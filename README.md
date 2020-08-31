@@ -1,7 +1,7 @@
 # Ansible Role for kubelet
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-kubelet.svg)](https://travis-ci.com/alvistack/ansible-role-kubelet)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-kubelet.svg)](https://github.com/alvistack/ansible-role-kubelet)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-kubelet.svg)](https://github.com/alvistack/ansible-role-kubelet/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-kubelet.svg)](https://github.com/alvistack/ansible-role-kubelet/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.kubelet-blue.svg)](https://galaxy.ansible.com/alvistack/kubelet)
 
