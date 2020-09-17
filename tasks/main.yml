@@ -123,6 +123,9 @@
     - { dest: "/lib/systemd/system/kubelet-shutdown.service", state: "absent" }
     - { dest: "/lib/systemd/system/kubelet.service" }
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
+  notify:
+    - kubelet | systemctl daemon-reload
+    - kubelet | systemctl restart kubelet.service
   tags: kubelet
 
 - name: systemctl start kubelet.service
