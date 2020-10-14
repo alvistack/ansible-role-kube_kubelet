@@ -16,7 +16,6 @@
 
 - name: include default variables
   include_vars: "../vars/main.yml"
-  tags: kubelet
 
 - name: include release specific variables
   include_vars: "{{ lookup('first_found', _params) }}"
@@ -31,7 +30,6 @@
       paths:
         - "../vars"
   ignore_errors: true
-  tags: kubelet
 
 - name: include release specific tasks
   include_tasks: "{{ lookup('first_found', _params) }}"
@@ -46,7 +44,6 @@
       paths:
         - "."
   ignore_errors: true
-  tags: kubelet
 
 - name: prepare directories
   file:
@@ -63,7 +60,6 @@
     - { dest: "/usr/local/bin" }
     - { dest: "/var/lib/kubelet" }
     - { dest: "{{ kubelet_download.dest | dirname }}" }
-  tags: kubelet
 
 - name: download archive
   vars:
@@ -78,7 +74,6 @@
     - "{{ kubelet_download }}"
   register: get_url_result
   until: get_url_result is succeeded
-  tags: kubelet
 
 - name: unarchive package
   shell: |
@@ -95,7 +90,6 @@
   when: get_url_result is changed
   notify:
     - kubelet | systemctl restart kubelet.service
-  tags: kubelet
 
 - name: copy templates
   template:
@@ -109,7 +103,6 @@
   notify:
     - kubelet | systemctl daemon-reload
     - kubelet | systemctl restart kubelet.service
-  tags: kubelet
 
 - name: prepare files
   file:
@@ -126,7 +119,9 @@
   notify:
     - kubelet | systemctl daemon-reload
     - kubelet | systemctl restart kubelet.service
-  tags: kubelet
+
+- name: flush handlers
+  meta: flush_handlers
 
 - name: systemctl start kubelet.service
   service:
@@ -135,8 +130,3 @@
     enabled: true
   changed_when: false
   ignore_errors: true
-  tags: kubelet
-
-- name: flush handlers
-  meta: flush_handlers
-  tags: kubelet
