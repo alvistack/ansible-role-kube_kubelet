@@ -77,7 +77,7 @@
 
 - name: unarchive package
   shell: |
-    set -o pipefail
+    set -euo pipefail
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
       && cp {{ kubelet_download.dest }} $TMP_DIR/kubelet \
