@@ -15,6 +15,18 @@
 # limitations under the License.
 
 _kubelet_download:
+  "v1.20.1":
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.20.1/bin/linux/amd64/kubelet"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.20.1"
+    checksum: "sha1:2801aa6a867d572ef5a147de7f7a1b90a0f78205"
+  "v1.20.0":
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.20.0/bin/linux/amd64/kubelet"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.20.0"
+    checksum: "sha1:56de5f7fd6c3e676c7260e8b5f73ebef174e4c7a"
+  "v1.19.6":
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.6/bin/linux/amd64/kubelet"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.6"
+    checksum: "sha1:4d0ed43c139775286e94cee95f7e3bc979ae3f70"
   "v1.19.5":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.5/bin/linux/amd64/kubelet"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.5"
@@ -23,10 +35,10 @@ _kubelet_download:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.4/bin/linux/amd64/kubelet"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.4"
     checksum: "sha1:2c36f20423a8413a7b45ed8be71ea357d0055b8d"
-  "v1.19.3":
-    url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.3/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.3"
-    checksum: "sha1:4c6ff5ffa4b2e6f3f886f319c977c57905186f72"
+  "v1.18.14":
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.14/bin/linux/amd64/kubelet"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.14"
+    checksum: "sha1:fc427eacf73cd048f3a17ae3390c8d91e74aba6c"
   "v1.18.13":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.13/bin/linux/amd64/kubelet"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.13"
@@ -35,7 +47,3 @@ _kubelet_download:
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.12/bin/linux/amd64/kubelet"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.12"
     checksum: "sha1:82e2b24741d2ee027cafa63e18f0c33576b84f7e"
-  "v1.18.11":
-    url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.11/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.11"
-    checksum: "sha1:5698a49550b4b936bc363199ac8f9a0055a9b000"
