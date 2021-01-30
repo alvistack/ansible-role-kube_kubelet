@@ -17,37 +17,37 @@
 _kubelet_download:
   "v1.20.2":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.20.2/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.20.2"
-    checksum: "sha1:25ca655cce261cdbeb7c3337185f669ee0b53cc3"
+    dest: "/var/cache/ansible/2447da8e0729ac6e4bdcb1ea7d41c8ae6e5c8565edea189434286697ccdc8d85/kubelet-v1.20.2"
+    checksum: "sha256:2447da8e0729ac6e4bdcb1ea7d41c8ae6e5c8565edea189434286697ccdc8d85"
   "v1.20.1":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.20.1/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.20.1"
-    checksum: "sha1:2801aa6a867d572ef5a147de7f7a1b90a0f78205"
+    dest: "/var/cache/ansible/2970974fa56ee90b76c7f3f8b0075f0719bb9d645aacfcef85238b68972aa9c3/kubelet-v1.20.1"
+    checksum: "sha256:2970974fa56ee90b76c7f3f8b0075f0719bb9d645aacfcef85238b68972aa9c3"
   "v1.20.0":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.20.0/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.20.0"
-    checksum: "sha1:56de5f7fd6c3e676c7260e8b5f73ebef174e4c7a"
+    dest: "/var/cache/ansible/ff2422571c4c1e9696e367f5f25466b96fb6e501f28aed29f414b1524a52dea0/kubelet-v1.20.0"
+    checksum: "sha256:ff2422571c4c1e9696e367f5f25466b96fb6e501f28aed29f414b1524a52dea0"
   "v1.19.7":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.7/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.7"
-    checksum: "sha1:1c52efae3c30d2a180c6f0dc0cf234dbdebf9472"
+    dest: "/var/cache/ansible/d8b296825f6dd7a17287b73cd6604d32210abbba86c88fb68c1b1c5016906c54/kubelet-v1.19.7"
+    checksum: "sha256:d8b296825f6dd7a17287b73cd6604d32210abbba86c88fb68c1b1c5016906c54"
   "v1.19.6":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.6/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.6"
-    checksum: "sha1:4d0ed43c139775286e94cee95f7e3bc979ae3f70"
+    dest: "/var/cache/ansible/8162fa58f7fbb9b1f07b2b666c9759ad5c30950bc9f6f2084de1c0d9bc64a4c0/kubelet-v1.19.6"
+    checksum: "sha256:8162fa58f7fbb9b1f07b2b666c9759ad5c30950bc9f6f2084de1c0d9bc64a4c0"
   "v1.19.5":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.5/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.19.5"
-    checksum: "sha1:4b607529f29b814dfd07e8ce2703c4f5c3c62a49"
+    dest: "/var/cache/ansible/b64dbc4a1a47d21be0a67f7d0050eebc02dd610c31175865da08e3a59e0834af/kubelet-v1.19.5"
+    checksum: "sha256:b64dbc4a1a47d21be0a67f7d0050eebc02dd610c31175865da08e3a59e0834af"
   "v1.18.15":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.15/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.15"
-    checksum: "sha1:287717d802c9008a67933269a22af7c5f108c97c"
+    dest: "/var/cache/ansible/2d079bc9f7ac2c2d1f86df842df55f2ec8e74e01edc347994ccf1a054b9e6077/kubelet-v1.18.15"
+    checksum: "sha256:2d079bc9f7ac2c2d1f86df842df55f2ec8e74e01edc347994ccf1a054b9e6077"
   "v1.18.14":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.14/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.14"
-    checksum: "sha1:fc427eacf73cd048f3a17ae3390c8d91e74aba6c"
+    dest: "/var/cache/ansible/1876c3aad83beeea1bc949fe6121d0d0d9002a0e026c15ccb568d8c5e748fba6/kubelet-v1.18.14"
+    checksum: "sha256:1876c3aad83beeea1bc949fe6121d0d0d9002a0e026c15ccb568d8c5e748fba6"
   "v1.18.13":
     url: "https://storage.googleapis.com/kubernetes-release/release/v1.18.13/bin/linux/amd64/kubelet"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/kubelet-v1.18.13"
-    checksum: "sha1:d56eeee0fa7d3ddeb5ec74350a19252c326b53bc"
+    dest: "/var/cache/ansible/dbdecaec19da684055242e2684ec8a2bff1674adf9ae8b8ed87f9cb46101a87f/kubelet-v1.18.13"
+    checksum: "sha256:dbdecaec19da684055242e2684ec8a2bff1674adf9ae8b8ed87f9cb46101a87f"
