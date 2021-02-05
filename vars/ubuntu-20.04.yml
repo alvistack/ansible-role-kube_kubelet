@@ -23,4 +23,5 @@ _apt:
   - { state: "latest", name: "iptables" }
   - { state: "latest", name: "mount" }
   - { state: "latest", name: "socat" }
+  - { state: "latest", name: "tar" }
   - { state: "latest", name: "util-linux" }
