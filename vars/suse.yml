@@ -22,5 +22,4 @@ _zypper:
   - { state: "latest", name: "iproute" }
   - { state: "latest", name: "iptables" }
   - { state: "latest", name: "socat" }
-  - { state: "latest", name: "tar" }
   - { state: "latest", name: "util-linux" }
