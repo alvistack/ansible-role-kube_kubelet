@@ -14,11 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Kubernetes version.
-kubernetes_version: "v1.20.6"
-
-# kubelet version.
-kubelet_version: "{{ kubernetes_version }}"
-
-# kubelet download details.
-kubelet_download: "{{ _kubelet_download[kubelet_version] }}"
+_apt:
+  - { state: "latest", name: "arptables" }
+  - { state: "latest", name: "conntrack" }
+  - { state: "latest", name: "ebtables" }
+  - { state: "latest", name: "ethtool" }
+  - { state: "latest", name: "iproute2" }
+  - { state: "latest", name: "iptables" }
+  - { state: "latest", name: "mount" }
+  - { state: "latest", name: "socat" }
+  - { state: "latest", name: "util-linux" }
