@@ -14,11 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Kubernetes version.
-kubernetes_version: "v1.20.7"
+# Kubernetes release.
+kubernetes_release: "v1.20.7"
 
 # kubelet version.
-kubelet_version: "{{ kubernetes_version }}"
+kubelet_version: "{{ _kubelet_version[kubernetes_release] }}"
 
 # kubelet download details.
 kubelet_download: "{{ _kubelet_download[kubelet_version] }}"
