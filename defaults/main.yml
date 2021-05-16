@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # Kubernetes release.
-kubernetes_release: "v1.20.7"
+kubernetes_release: "v1.20"
 
 # kubelet version.
 kubelet_version: "{{ _kubelet_version[kubernetes_release] }}"
