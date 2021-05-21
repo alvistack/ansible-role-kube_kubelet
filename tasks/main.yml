@@ -61,9 +61,10 @@
   loop:
     - { dest: "/etc/kubernetes" }
     - { dest: "/etc/kubernetes/manifests" }
-    - { dest: "/lib/systemd/system" }
-    - { dest: "/lib/systemd/system/kubelet.service.d" }
+    - { dest: "/lib/systemd/system/kubelet.service.d", state: "absent" }
     - { dest: "/usr/local/bin" }
+    - { dest: "/usr/local/lib/systemd/system" }
+    - { dest: "/usr/local/lib/systemd/system/kubelet.service.d" }
     - { dest: "/var/lib/kubelet" }
 
 - name: download archive
@@ -110,7 +111,7 @@
     group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
   loop:
-    - { dest: "/lib/systemd/system/kubelet.service" }
+    - { dest: "/usr/local/lib/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
     - kubelet | systemctl restart kubelet.service
@@ -125,8 +126,9 @@
   loop:
     - { dest: "/etc/systemd/system/kubelet.service", state: "absent" }
     - { dest: "/lib/systemd/system/kubelet-shutdown.service", state: "absent" }
-    - { dest: "/lib/systemd/system/kubelet.service" }
+    - { dest: "/lib/systemd/system/kubelet.service", state: "absent" }
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
+    - { dest: "/usr/local/lib/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
     - kubelet | systemctl restart kubelet.service
