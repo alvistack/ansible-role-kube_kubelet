@@ -17,7 +17,6 @@
 _kubelet_version:
   "v1.21": "v1.21.2"
   "v1.20": "v1.20.8"
-  "v1.19": "v1.19.12"
 
 _kubelet_download:
   "v1.21.2":
@@ -44,15 +43,3 @@ _kubelet_download:
     url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.6/bin/linux/amd64/kubelet"
     dest: "/var/cache/ansible/7688a663dd06222d337c8fdb5b05e1d9377e6d64aa048c6acf484bc3f2a596a8/kubelet-v1.20.6"
     checksum: "7688a663dd06222d337c8fdb5b05e1d9377e6d64aa048c6acf484bc3f2a596a8"
-  "v1.19.12":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.19.12/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/5e910fd72b3b8491dd0998a48d08766231fa5650e54adeaf0848ccc034c36027/kubelet-v1.19.12"
-    checksum: "5e910fd72b3b8491dd0998a48d08766231fa5650e54adeaf0848ccc034c36027"
-  "v1.19.11":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.19.11/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/b575819ac2a8c9532bf16ba508a1500ee61b6c9576e71db401df26048fde4bc4/kubelet-v1.19.11"
-    checksum: "b575819ac2a8c9532bf16ba508a1500ee61b6c9576e71db401df26048fde4bc4"
-  "v1.19.10":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.19.10/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/cf2f038f1012d5883407bd82e8f0d5cd0e27c8074ab821b296c6a3214aec917e/kubelet-v1.19.10"
-    checksum: "cf2f038f1012d5883407bd82e8f0d5cd0e27c8074ab821b296c6a3214aec917e"
