@@ -15,11 +15,14 @@
 # limitations under the License.
 
 _kubelet_version:
-  "v1.21": "v1.21.1"
-  "v1.20": "v1.20.7"
-  "v1.19": "v1.19.11"
+  "v1.21": "v1.21.2"
+  "v1.20": "v1.20.8"
 
 _kubelet_download:
+  "v1.21.2":
+    url: "http://storage.googleapis.com/kubernetes-release/release/v1.21.2/bin/linux/amd64/kubelet"
+    dest: "/var/cache/ansible/aaf144b19c0676e1fe34a93dc753fb38f4de057a0e2d7521b0bef4e82f8ccc28/kubelet-v1.21.2"
+    checksum: "aaf144b19c0676e1fe34a93dc753fb38f4de057a0e2d7521b0bef4e82f8ccc28"
   "v1.21.1":
     url: "http://storage.googleapis.com/kubernetes-release/release/v1.21.1/bin/linux/amd64/kubelet"
     dest: "/var/cache/ansible/e77ff3ea404b2e69519ea4dce41cbdf11ae2bcba75a86d409a76eecda1c76244/kubelet-v1.21.1"
@@ -28,6 +31,10 @@ _kubelet_download:
     url: "http://storage.googleapis.com/kubernetes-release/release/v1.21.0/bin/linux/amd64/kubelet"
     dest: "/var/cache/ansible/681c81b7934ae2bf38b9f12d891683972d1fbbf6d7d97e50940a47b139d41b35/kubelet-v1.21.0"
     checksum: "681c81b7934ae2bf38b9f12d891683972d1fbbf6d7d97e50940a47b139d41b35"
+  "v1.20.8":
+    url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.8/bin/linux/amd64/kubelet"
+    dest: "/var/cache/ansible/dcfb52df0b779e3475d0d4275ff11bf64a18d00012717ac2f24b687caa2b7024/kubelet-v1.20.8"
+    checksum: "dcfb52df0b779e3475d0d4275ff11bf64a18d00012717ac2f24b687caa2b7024"
   "v1.20.7":
     url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.7/bin/linux/amd64/kubelet"
     dest: "/var/cache/ansible/f96eda810ec4c8f40f6455eaab9be46a8d0958d72f8432b48a8a0d7c52867c5f/kubelet-v1.20.7"
@@ -36,19 +43,3 @@ _kubelet_download:
     url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.6/bin/linux/amd64/kubelet"
     dest: "/var/cache/ansible/7688a663dd06222d337c8fdb5b05e1d9377e6d64aa048c6acf484bc3f2a596a8/kubelet-v1.20.6"
     checksum: "7688a663dd06222d337c8fdb5b05e1d9377e6d64aa048c6acf484bc3f2a596a8"
-  "v1.20.5":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/8a07891153398585a749285bb3caa2e16f0802d03ffdd5054a7ef1ef32989bea/kubelet-v1.20.5"
-    checksum: "8a07891153398585a749285bb3caa2e16f0802d03ffdd5054a7ef1ef32989bea"
-  "v1.19.11":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.19.11/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/b575819ac2a8c9532bf16ba508a1500ee61b6c9576e71db401df26048fde4bc4/kubelet-v1.19.11"
-    checksum: "b575819ac2a8c9532bf16ba508a1500ee61b6c9576e71db401df26048fde4bc4"
-  "v1.19.10":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.19.10/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/cf2f038f1012d5883407bd82e8f0d5cd0e27c8074ab821b296c6a3214aec917e/kubelet-v1.19.10"
-    checksum: "cf2f038f1012d5883407bd82e8f0d5cd0e27c8074ab821b296c6a3214aec917e"
-  "v1.19.9":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.19.9/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/296e72c395f030209e712167fc5f6d2fdfe3530ca4c01bcd9bfb8c5e727c3d8d/kubelet-v1.19.9"
-    checksum: "296e72c395f030209e712167fc5f6d2fdfe3530ca4c01bcd9bfb8c5e727c3d8d"
