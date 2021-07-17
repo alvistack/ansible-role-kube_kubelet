@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_zypper_repository:
+  - name: "devel:kubic"
+    repo: "http://download.opensuse.org/repositories/devel:kubic/openSUSE_Leap_15.2"
+    state: "present"
+
 _zypper:
   - { state: "latest", name: "arptables" }
   - { state: "latest", name: "conntrack-tools" }
@@ -23,3 +28,4 @@ _zypper:
   - { state: "latest", name: "iptables" }
   - { state: "latest", name: "socat" }
   - { state: "latest", name: "util-linux" }
+  - { state: "latest", name: "kubernetes{{ kubernetes_release }}-kubelet" }
