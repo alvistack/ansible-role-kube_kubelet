@@ -14,15 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_key:
-  - url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
-    id: "7F92E05B31093BEF5A3C2D38FEEA9169307EA071"
-    state: "present"
-
-_apt_repository:
-  - repo: "deb https://apt.kubernetes.io/ kubernetes-xenial main"
-    state: "present"
-
 _apt:
   - { state: "latest", name: "arptables" }
   - { state: "latest", name: "conntrack" }
@@ -33,4 +24,3 @@ _apt:
   - { state: "latest", name: "mount" }
   - { state: "latest", name: "socat" }
   - { state: "latest", name: "util-linux" }
-  - { state: "present", name: "kubelet={{ kubelet_version }}-00" }
