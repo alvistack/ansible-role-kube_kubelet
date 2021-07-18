@@ -63,7 +63,7 @@
   loop:
     - { dest: "/etc/kubernetes" }
     - { dest: "/etc/kubernetes/manifests" }
-    - { dest: "/lib/systemd/system" }
+    - { dest: "/etc/systemd/system" }
     - { dest: "/usr/local/bin" }
     - { dest: "/var/lib/kubelet" }
 
@@ -112,7 +112,7 @@
     group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
   loop:
-    - { dest: "/lib/systemd/system/kubelet.service" }
+    - { dest: "/etc/systemd/system/kubelet.service" }
   notify:
     - kubelet | systemctl daemon-reload
     - kubelet | systemctl restart kubelet.service
@@ -125,7 +125,7 @@
     mode: "{{ item.mode | default('0644') }}"
     state: "{{ item.state | default('file') }}"
   loop:
-    - { dest: "/lib/systemd/system/kubelet.service" }
+    - { dest: "/etc/systemd/system/kubelet.service" }
     - { dest: "/usr/local/bin/kubelet", mode: "0755" }
   notify:
     - kubelet | systemctl daemon-reload

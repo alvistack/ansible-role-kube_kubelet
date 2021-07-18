@@ -20,5 +20,10 @@
   tasks:
     - name: include role
       include_role:
+        name: containernetworking_plugins
+      tags: containernetworking_plugins
+
+    - name: include role
+      include_role:
         name: kubelet
       tags: kubelet
