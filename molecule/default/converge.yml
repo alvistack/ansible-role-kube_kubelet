@@ -25,5 +25,5 @@
 
     - name: include role
       include_role:
-        name: kubelet
-      tags: kubelet
+        name: kube_kubelet
+      tags: kube_kubelet
