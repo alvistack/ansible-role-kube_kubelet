@@ -14,13 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: kubelet | systemctl daemon-reload
+- name: kube_kubelet | systemctl daemon-reload
   systemd:
     daemon_reload: true
   changed_when: false
   failed_when: false
 
-- name: kubelet | systemctl restart kubelet.service
+- name: kube_kubelet | systemctl restart kubelet.service
   service:
     name: "kubelet.service"
     state: "restarted"

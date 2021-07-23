@@ -1,9 +1,9 @@
 # Ansible Role for kubelet
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-kubelet/master)](https://gitlab.com/alvistack/ansible-role-kubelet/-/pipelines)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-kubelet.svg)](https://github.com/alvistack/ansible-role-kubelet/releases)
-[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-kubelet.svg)](https://github.com/alvistack/ansible-role-kubelet/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.kubelet-blue.svg)](https://galaxy.ansible.com/alvistack/kubelet)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-kube_kubelet/master)](https://gitlab.com/alvistack/ansible-role-kube_kubelet/-/pipelines)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-kube_kubelet.svg)](https://github.com/alvistack/ansible-role-kube_kubelet/releases)
+[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-kube_kubelet.svg)](https://github.com/alvistack/ansible-role-kube_kubelet/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.kube_kubelet-blue.svg)](https://galaxy.ansible.com/alvistack/kube_kubelet)
 
 Ansible Role for kubelet Installation.
 
