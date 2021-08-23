@@ -15,31 +15,5 @@
 # limitations under the License.
 
 _kube_kubelet_version:
-  "1.21": "1.21.3"
-  "1.20": "1.20.9"
-
-_kube_kubelet_download:
-  "1.21.3":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.21.3/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/5bd542d656caabd75e59757a3adbae3e13d63c7c7c113d2a72475574c3c640fe/kubelet-v1.21.3"
-    checksum: "5bd542d656caabd75e59757a3adbae3e13d63c7c7c113d2a72475574c3c640fe"
-  "1.21.2":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.21.2/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/aaf144b19c0676e1fe34a93dc753fb38f4de057a0e2d7521b0bef4e82f8ccc28/kubelet-v1.21.2"
-    checksum: "aaf144b19c0676e1fe34a93dc753fb38f4de057a0e2d7521b0bef4e82f8ccc28"
-  "1.21.1":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.21.1/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/e77ff3ea404b2e69519ea4dce41cbdf11ae2bcba75a86d409a76eecda1c76244/kubelet-v1.21.1"
-    checksum: "e77ff3ea404b2e69519ea4dce41cbdf11ae2bcba75a86d409a76eecda1c76244"
-  "1.20.9":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.9/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/00182b3d045b49e34d7a4891b4a7ac0e101088e6a7a870dc36caeab2ade120a5/kubelet-v1.20.9"
-    checksum: "00182b3d045b49e34d7a4891b4a7ac0e101088e6a7a870dc36caeab2ade120a5"
-  "1.20.8":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.8/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/dcfb52df0b779e3475d0d4275ff11bf64a18d00012717ac2f24b687caa2b7024/kubelet-v1.20.8"
-    checksum: "dcfb52df0b779e3475d0d4275ff11bf64a18d00012717ac2f24b687caa2b7024"
-  "1.20.7":
-    url: "http://storage.googleapis.com/kubernetes-release/release/v1.20.7/bin/linux/amd64/kubelet"
-    dest: "/var/cache/ansible/f96eda810ec4c8f40f6455eaab9be46a8d0958d72f8432b48a8a0d7c52867c5f/kubelet-v1.20.7"
-    checksum: "f96eda810ec4c8f40f6455eaab9be46a8d0958d72f8432b48a8a0d7c52867c5f"
+  "1.21": "1.21.4"
+  "1.20": "1.20.10"
