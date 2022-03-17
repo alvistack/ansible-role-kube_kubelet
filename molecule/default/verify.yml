@@ -19,6 +19,6 @@
   become: true
   tasks:
     - name: kubelet --version
-      command: kubelet --version
+      ansible.builtin.command: kubelet --version
       register: result
       changed_when: result is not succeeded

@@ -19,11 +19,11 @@
   become: true
   tasks:
     - name: include role
-      include_role:
+      ansible.builtin.include_role:
         name: containernetworking_plugins
       tags: containernetworking_plugins
 
     - name: include role
-      include_role:
+      ansible.builtin.include_role:
         name: kube_kubelet
       tags: kube_kubelet
