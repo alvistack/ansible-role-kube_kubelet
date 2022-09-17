@@ -53,32 +53,6 @@
         - "."
       skip: true
 
-- name: prepare directories
-  ansible.builtin.file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0755') }}"
-    state: "{{ item.state | default('directory') }}"
-  loop:
-    - { dest: "/etc/kubernetes" }
-    - { dest: "/etc/kubernetes/manifests" }
-    - { dest: "/etc/systemd/system" }
-    - { dest: "/var/lib/kubelet" }
-
-- name: copy templates
-  ansible.builtin.template:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-  loop:
-    - { dest: "/etc/systemd/system/kubelet.service" }
-  notify:
-    - kube_kubelet | systemctl daemon-reload
-    - kube_kubelet | systemctl restart kubelet.service
-
 - name: prepare files
   ansible.builtin.file:
     dest: "{{ item.dest }}"
@@ -87,7 +61,7 @@
     mode: "{{ item.mode | default('0644') }}"
     state: "{{ item.state | default('file') }}"
   loop:
-    - { dest: "/etc/systemd/system/kubelet.service" }
+    - { dest: "/etc/systemd/system/kubelet.service", state: "absent" }
   notify:
     - kube_kubelet | systemctl daemon-reload
     - kube_kubelet | systemctl restart kubelet.service
