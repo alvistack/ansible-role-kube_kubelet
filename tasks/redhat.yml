@@ -53,6 +53,9 @@
   loop: "{{ _yum }}"
   register: result
   until: result is succeeded
+  notify:
+    - kube_kubelet | systemctl daemon-reload
+    - kube_kubelet | systemctl restart kubelet.service
 
 - name: yum versionlock add
   community.general.yum_versionlock:

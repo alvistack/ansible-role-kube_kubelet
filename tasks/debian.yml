@@ -50,6 +50,9 @@
   loop: "{{ _apt }}"
   register: result
   until: result is succeeded
+  notify:
+    - kube_kubelet | systemctl daemon-reload
+    - kube_kubelet | systemctl restart kubelet.service
 
 - name: apt-mark hold
   ansible.builtin.dpkg_selections:
