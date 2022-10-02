@@ -20,6 +20,7 @@
   become: true
   tasks:
     - name: kubelet --version
-      ansible.builtin.command: kubelet --version
+      ansible.builtin.command:
+        cmd: kubelet --version
       register: result
       changed_when: result is not succeeded
